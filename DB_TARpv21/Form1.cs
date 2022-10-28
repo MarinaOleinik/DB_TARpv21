@@ -210,7 +210,7 @@ namespace DB_TARpv21
         List<string> Tooded_list = new List<string>();
         private void Arve_btn_Click(object sender, EventArgs e)
         {
-            Tooded_list.Add("Toode  Hind  Kogus Summa");
+            Tooded_list.Add("-----------------------");
             Tooded_list.Add((Toode_txt.Text+"  "+Hind_txt.Text+"  " +Kogus_txt.Text+"  "+(Convert.ToInt32(Kogus_txt.Text.ToString())* Convert.ToInt32(Hind_txt.Text.ToString()))).ToString());
 
         }
@@ -219,6 +219,7 @@ namespace DB_TARpv21
         {
             document = new Document();//using Aspose.Pdf
             var page = document.Pages.Add();
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Toode  Hind  Kogus Summa"));
             foreach (var toode in Tooded_list)
             {
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(toode));
