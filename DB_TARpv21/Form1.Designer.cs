@@ -44,6 +44,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Lisa_Kat_btn = new System.Windows.Forms.Button();
             this.Kus_Kat_btn = new System.Windows.Forms.Button();
+            this.Arve_btn = new System.Windows.Forms.Button();
+            this.Ost_btn = new System.Windows.Forms.Button();
+            this.N_Arve_btn = new System.Windows.Forms.Button();
+            this.Arve_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -205,11 +209,56 @@
             this.Kus_Kat_btn.UseVisualStyleBackColor = true;
             this.Kus_Kat_btn.Click += new System.EventHandler(this.Kus_Kat_btn_Click);
             // 
+            // Arve_btn
+            // 
+            this.Arve_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Arve_btn.Location = new System.Drawing.Point(219, 472);
+            this.Arve_btn.Name = "Arve_btn";
+            this.Arve_btn.Size = new System.Drawing.Size(124, 49);
+            this.Arve_btn.TabIndex = 16;
+            this.Arve_btn.Text = "Lisa arvele";
+            this.Arve_btn.UseVisualStyleBackColor = true;
+            this.Arve_btn.Click += new System.EventHandler(this.Arve_btn_Click);
+            // 
+            // Ost_btn
+            // 
+            this.Ost_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Ost_btn.Location = new System.Drawing.Point(351, 472);
+            this.Ost_btn.Name = "Ost_btn";
+            this.Ost_btn.Size = new System.Drawing.Size(124, 49);
+            this.Ost_btn.TabIndex = 17;
+            this.Ost_btn.Text = "Koosta arve";
+            this.Ost_btn.UseVisualStyleBackColor = true;
+            this.Ost_btn.Click += new System.EventHandler(this.Ost_btn_Click);
+            // 
+            // N_Arve_btn
+            // 
+            this.N_Arve_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.N_Arve_btn.Location = new System.Drawing.Point(481, 472);
+            this.N_Arve_btn.Name = "N_Arve_btn";
+            this.N_Arve_btn.Size = new System.Drawing.Size(124, 49);
+            this.N_Arve_btn.TabIndex = 18;
+            this.N_Arve_btn.Text = "Näita arve";
+            this.N_Arve_btn.UseVisualStyleBackColor = true;
+            // 
+            // Arve_lbl
+            // 
+            this.Arve_lbl.AutoSize = true;
+            this.Arve_lbl.Location = new System.Drawing.Point(633, 32);
+            this.Arve_lbl.Name = "Arve_lbl";
+            this.Arve_lbl.Size = new System.Drawing.Size(16, 13);
+            this.Arve_lbl.TabIndex = 19;
+            this.Arve_lbl.Text = "...";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 486);
+            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.Arve_lbl);
+            this.Controls.Add(this.N_Arve_btn);
+            this.Controls.Add(this.Ost_btn);
+            this.Controls.Add(this.Arve_btn);
             this.Controls.Add(this.Kus_Kat_btn);
             this.Controls.Add(this.Lisa_Kat_btn);
             this.Controls.Add(this.dataGridView1);
@@ -253,6 +302,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Lisa_Kat_btn;
         private System.Windows.Forms.Button Kus_Kat_btn;
+        private System.Windows.Forms.Button Arve_btn;
+        private System.Windows.Forms.Button Ost_btn;
+        private System.Windows.Forms.Button N_Arve_btn;
+        private System.Windows.Forms.Label Arve_lbl;
     }
 }
 

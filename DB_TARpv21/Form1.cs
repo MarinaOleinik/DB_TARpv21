@@ -9,7 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Aspose.Pdf;
+using Image = System.Drawing.Image;
 
 namespace DB_TARpv21
 {
@@ -32,6 +35,7 @@ namespace DB_TARpv21
             Hind_txt.Text = "";
             Kogus_txt.Text = "";
             Kat_cbox.Items.Clear();
+            
         }
         private void Lisa_Kat_btn_Click(object sender, EventArgs e)
         {
@@ -176,8 +180,6 @@ namespace DB_TARpv21
                 Toode_pbox.Image = Image.FromFile(@"..\..\Images\about.png");
                 MessageBox.Show("Fail puudub");
             }
-            
-
             string v = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             Kat_cbox.SelectedIndex = Int32.Parse(v) - 1;
         }
@@ -204,6 +206,35 @@ namespace DB_TARpv21
             {
                 MessageBox.Show("Viga");
             }
+        }
+        List<string> Tooded_list = new List<string>();
+        private void Arve_btn_Click(object sender, EventArgs e)
+        {
+            Tooded_list.Add("Toode  Hind  Kogus Summa");
+            Tooded_list.Add((Toode_txt.Text+"  "+Hind_txt.Text+"  " +Kogus_txt.Text+"  "+(Convert.ToInt32(Kogus_txt.Text.ToString())* Convert.ToInt32(Hind_txt.Text.ToString()))).ToString());
+
+        }
+        Document document;
+        private void Ost_btn_Click(object sender, EventArgs e)
+        {
+            document = new Document();//using Aspose.Pdf
+            var page = document.Pages.Add();
+            foreach (var toode in Tooded_list)
+            {
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(toode));
+            }
+
+            //using (var stream = new MemoryStream())
+            //{
+            document.Save(@"..\..\Arved\Arve_.pdf");
+            document.Dispose();
+            //}
+        }
+
+        public void N_Arve_btn_Click(object sender, EventArgs e)
+        {
+            
+            System.Diagnostics.Process.Start(@"..\..\Arved\Arve_.pdf");
         }
 
         public void Naita_Andmed()
