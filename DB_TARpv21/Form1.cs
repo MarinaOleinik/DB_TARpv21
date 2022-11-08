@@ -13,6 +13,8 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Aspose.Pdf;
 using Image = System.Drawing.Image;
+using Aspose.Pdf.Text;
+using System.Runtime.Remoting.Messaging;
 
 namespace DB_TARpv21
 {
@@ -224,18 +226,19 @@ namespace DB_TARpv21
             {
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(toode));
             }
-
-            //using (var stream = new MemoryStream())
-            //{
             document.Save(@"..\..\Arved\Arve_.pdf");
             document.Dispose();
-            //}
         }
 
         public void N_Arve_btn_Click(object sender, EventArgs e)
         {
-            
             System.Diagnostics.Process.Start(@"..\..\Arved\Arve_.pdf");
+        }
+
+        private void Kassa_Click(object sender, EventArgs e)
+        {
+            Kassa kassa=new Kassa();
+            kassa.Show();
         }
 
         public void Naita_Andmed()

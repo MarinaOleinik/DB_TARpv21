@@ -70,6 +70,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kassa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -109,6 +112,11 @@
     <Content Include="Images\piim.jpg" />
     <Content Include="Images\about.png" />
     <Content Include="Images\Õun.jpg" />
+    <Content Include="Kat_pildid\Ehitusmaterjalid.jpg" />
+    <Content Include="Kat_pildid\Lihatooded.jpg" />
+    <Content Include="Kat_pildid\Mänguasjad.jpg" />
+    <Content Include="Kat_pildid\Toidutooded.jpg" />
+    <Content Include="Kat_pildid\Ajatooded.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

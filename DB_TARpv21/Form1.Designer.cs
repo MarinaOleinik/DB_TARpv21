@@ -48,6 +48,7 @@
             this.Ost_btn = new System.Windows.Forms.Button();
             this.N_Arve_btn = new System.Windows.Forms.Button();
             this.Arve_lbl = new System.Windows.Forms.Label();
+            this.Kassa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -250,11 +251,23 @@
             this.Arve_lbl.TabIndex = 19;
             this.Arve_lbl.Text = "...";
             // 
+            // Kassa
+            // 
+            this.Kassa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Kassa.Location = new System.Drawing.Point(664, 472);
+            this.Kassa.Name = "Kassa";
+            this.Kassa.Size = new System.Drawing.Size(124, 49);
+            this.Kassa.TabIndex = 20;
+            this.Kassa.Text = "Kassa";
+            this.Kassa.UseVisualStyleBackColor = true;
+            this.Kassa.Click += new System.EventHandler(this.Kassa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.Kassa);
             this.Controls.Add(this.Arve_lbl);
             this.Controls.Add(this.N_Arve_btn);
             this.Controls.Add(this.Ost_btn);
@@ -306,6 +319,7 @@
         private System.Windows.Forms.Button Ost_btn;
         private System.Windows.Forms.Button N_Arve_btn;
         private System.Windows.Forms.Label Arve_lbl;
+        private System.Windows.Forms.Button Kassa;
     }
 }
 
