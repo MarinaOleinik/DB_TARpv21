@@ -20,7 +20,13 @@ namespace DB_TARpv21
         public Kassa()
         {
             this.Size = new System.Drawing.Size(600, 300);
+            Kategooriad();
             
+
+
+        }
+        public void Kategooriad()
+        {
             kategooriad = new TabControl();
             kategooriad.Name = "Kategooriad";
             kategooriad.Dock = DockStyle.Left;
@@ -39,14 +45,13 @@ namespace DB_TARpv21
             foreach (DataRow nimetus in dt_kat.Rows)
             {
                 kategooriad.TabPages.Add((string)nimetus["Kategooria_nimetus"]);
-                iconsList.Images.Add(Image.FromFile(@"..\..\Kat_pildid\" + (string)nimetus["Kategooria_nimetus"]+".jpg"));
+                iconsList.Images.Add(Image.FromFile(@"..\..\Kat_pildid\" + (string)nimetus["Kategooria_nimetus"] + ".jpg"));
                 kategooriad.TabPages[i].ImageIndex = i;
                 i++;
             }
-            kategooriad.ImageList= iconsList;
+            kategooriad.ImageList = iconsList;
             connect.Close();
             this.Controls.Add(kategooriad);
-
         }
         
     }
