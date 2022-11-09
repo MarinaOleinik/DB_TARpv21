@@ -21,10 +21,30 @@ namespace DB_TARpv21
         {
             this.Size = new System.Drawing.Size(600, 300);
             Kategooriad();
-            
+            //Tooded();
 
 
         }
+        TableLayoutPanel tlp;
+
+        
+
+        //public void Tooded()
+        //{
+        //    connect.Open();
+        //    DataTable dt_toode = new DataTable();
+        //    adapter_toode = new SqlDataAdapter("SELECT * FROM Toodetable", connect);
+        //    adapter_toode.Fill(dt_toode);
+            
+        //    tlp = new TableLayoutPanel();
+        //    foreach (DataRow toode in adapter_toode)
+        //    {
+        //        //PictureBox pbox=new PictureBox.Image.Add.FromFile("../../Images/about.png");
+        //    }
+
+        //    connect.Close();
+
+        //}
         public void Kategooriad()
         {
             kategooriad = new TabControl();
@@ -37,19 +57,20 @@ namespace DB_TARpv21
             adapter_kat = new SqlDataAdapter("SELECT Kategooria_nimetus FROM Kategooria", connect);
             DataTable dt_kat = new DataTable();
             adapter_kat.Fill(dt_kat);
-            ImageList iconsList = new ImageList();
-            iconsList.ColorDepth = ColorDepth.Depth32Bit;
-            iconsList.ImageSize = new Size(25, 25);
+            ImageList iconsList = new ImageList();//
+            iconsList.ColorDepth = ColorDepth.Depth32Bit;//
+            iconsList.ImageSize = new Size(25, 25);//
 
-            int i = 0;
+            int i = 0;//
             foreach (DataRow nimetus in dt_kat.Rows)
             {
                 kategooriad.TabPages.Add((string)nimetus["Kategooria_nimetus"]);
-                iconsList.Images.Add(Image.FromFile(@"..\..\Kat_pildid\" + (string)nimetus["Kategooria_nimetus"] + ".jpg"));
-                kategooriad.TabPages[i].ImageIndex = i;
-                i++;
+                iconsList.Images.Add(Image.FromFile(@"..\..\Kat_pildid\" + (string)nimetus["Kategooria_nimetus"] + ".jpg"));//
+                kategooriad.TabPages[i].ImageIndex = i;//
+                i++;//
+
             }
-            kategooriad.ImageList = iconsList;
+            kategooriad.ImageList = iconsList;//
             connect.Close();
             this.Controls.Add(kategooriad);
         }

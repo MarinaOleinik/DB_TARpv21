@@ -15,6 +15,8 @@ using Aspose.Pdf;
 using Image = System.Drawing.Image;
 using Aspose.Pdf.Text;
 using System.Runtime.Remoting.Messaging;
+using Grpc.Core;
+using System.Diagnostics;
 
 namespace DB_TARpv21
 {
@@ -241,6 +243,43 @@ namespace DB_TARpv21
             kassa.Show();
         }
 
+        private void Kus_file_btn_Click(object sender, EventArgs e)
+        {
+            string file_name = @"..\..\Images\piim.jpg";
+            string prugikast= @"..\..\Kustutatud_failid\piim.jpg";
+            FileInfo file = new FileInfo(file_name);
+            if (file.Exists)//check file exsit or not  
+            {
+                System.IO.File.Move(file_name, prugikast);
+                file.Delete();
+                
+                MessageBox.Show(file_name + " fail oli kustutatud");
+            }
+            else
+            {
+                MessageBox.Show(file_name + " puudub");
+            }
+        }
+
+        private void Taasta_fail_btn_Click(object sender, EventArgs e)
+        {
+            string file_name = @"..\..\Images\piim.jpg";
+            string prugikast = @"..\..\Kustutatud_failid\piim.jpg";
+            FileInfo file = new FileInfo(prugikast);
+            if (file.Exists)//check file exsit or not  
+            {
+                System.IO.File.Move(prugikast, file_name);
+                file.Delete();
+
+                MessageBox.Show(file_name + " fail oli taastatud");
+            }
+            else
+            {
+                MessageBox.Show(file_name + " fail puudub");
+            }
+
+        }
+
         public void Naita_Andmed()
         {
             connect.Open();
@@ -251,6 +290,7 @@ namespace DB_TARpv21
            
             Toode_pbox.Image = Image.FromFile("../../Images/about.png");
             connect.Close();
+            
             Naita_Kat();
 
             

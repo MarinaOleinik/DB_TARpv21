@@ -49,6 +49,8 @@
             this.N_Arve_btn = new System.Windows.Forms.Button();
             this.Arve_lbl = new System.Windows.Forms.Label();
             this.Kassa = new System.Windows.Forms.Button();
+            this.Kus_file_btn = new System.Windows.Forms.Button();
+            this.Taasta_fail_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +143,7 @@
             this.Otsi_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.Otsi_btn.Location = new System.Drawing.Point(219, 209);
             this.Otsi_btn.Name = "Otsi_btn";
-            this.Otsi_btn.Size = new System.Drawing.Size(124, 49);
+            this.Otsi_btn.Size = new System.Drawing.Size(72, 49);
             this.Otsi_btn.TabIndex = 9;
             this.Otsi_btn.Text = "Otsi fail";
             this.Otsi_btn.UseVisualStyleBackColor = true;
@@ -150,9 +152,9 @@
             // Lisa_btn
             // 
             this.Lisa_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.Lisa_btn.Location = new System.Drawing.Point(351, 209);
+            this.Lisa_btn.Location = new System.Drawing.Point(481, 209);
             this.Lisa_btn.Name = "Lisa_btn";
-            this.Lisa_btn.Size = new System.Drawing.Size(124, 49);
+            this.Lisa_btn.Size = new System.Drawing.Size(97, 49);
             this.Lisa_btn.TabIndex = 10;
             this.Lisa_btn.Text = "Lisa";
             this.Lisa_btn.UseVisualStyleBackColor = true;
@@ -161,9 +163,9 @@
             // Uuenda_btn
             // 
             this.Uuenda_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.Uuenda_btn.Location = new System.Drawing.Point(481, 209);
+            this.Uuenda_btn.Location = new System.Drawing.Point(584, 209);
             this.Uuenda_btn.Name = "Uuenda_btn";
-            this.Uuenda_btn.Size = new System.Drawing.Size(124, 49);
+            this.Uuenda_btn.Size = new System.Drawing.Size(95, 49);
             this.Uuenda_btn.TabIndex = 11;
             this.Uuenda_btn.Text = "Uuenda";
             this.Uuenda_btn.UseVisualStyleBackColor = true;
@@ -172,9 +174,9 @@
             // Kustuta_btn
             // 
             this.Kustuta_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.Kustuta_btn.Location = new System.Drawing.Point(611, 209);
+            this.Kustuta_btn.Location = new System.Drawing.Point(685, 209);
             this.Kustuta_btn.Name = "Kustuta_btn";
-            this.Kustuta_btn.Size = new System.Drawing.Size(124, 49);
+            this.Kustuta_btn.Size = new System.Drawing.Size(103, 49);
             this.Kustuta_btn.TabIndex = 12;
             this.Kustuta_btn.Text = "Kustuta";
             this.Kustuta_btn.UseVisualStyleBackColor = true;
@@ -184,7 +186,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(40, 279);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(694, 187);
+            this.dataGridView1.Size = new System.Drawing.Size(748, 187);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -193,7 +195,7 @@
             this.Lisa_Kat_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.Lisa_Kat_btn.Location = new System.Drawing.Point(17, 209);
             this.Lisa_Kat_btn.Name = "Lisa_Kat_btn";
-            this.Lisa_Kat_btn.Size = new System.Drawing.Size(95, 49);
+            this.Lisa_Kat_btn.Size = new System.Drawing.Size(101, 49);
             this.Lisa_Kat_btn.TabIndex = 14;
             this.Lisa_Kat_btn.Text = "Lisa kategooriat";
             this.Lisa_Kat_btn.UseVisualStyleBackColor = true;
@@ -204,7 +206,7 @@
             this.Kus_Kat_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.Kus_Kat_btn.Location = new System.Drawing.Point(115, 209);
             this.Kus_Kat_btn.Name = "Kus_Kat_btn";
-            this.Kus_Kat_btn.Size = new System.Drawing.Size(95, 49);
+            this.Kus_Kat_btn.Size = new System.Drawing.Size(98, 49);
             this.Kus_Kat_btn.TabIndex = 15;
             this.Kus_Kat_btn.Text = "Kustuta kategooriat";
             this.Kus_Kat_btn.UseVisualStyleBackColor = true;
@@ -262,11 +264,35 @@
             this.Kassa.UseVisualStyleBackColor = true;
             this.Kassa.Click += new System.EventHandler(this.Kassa_Click);
             // 
+            // Kus_file_btn
+            // 
+            this.Kus_file_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Kus_file_btn.Location = new System.Drawing.Point(297, 209);
+            this.Kus_file_btn.Name = "Kus_file_btn";
+            this.Kus_file_btn.Size = new System.Drawing.Size(72, 49);
+            this.Kus_file_btn.TabIndex = 21;
+            this.Kus_file_btn.Text = "Kustuta fail";
+            this.Kus_file_btn.UseVisualStyleBackColor = true;
+            this.Kus_file_btn.Click += new System.EventHandler(this.Kus_file_btn_Click);
+            // 
+            // Taasta_fail_btn
+            // 
+            this.Taasta_fail_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Taasta_fail_btn.Location = new System.Drawing.Point(375, 209);
+            this.Taasta_fail_btn.Name = "Taasta_fail_btn";
+            this.Taasta_fail_btn.Size = new System.Drawing.Size(72, 49);
+            this.Taasta_fail_btn.TabIndex = 22;
+            this.Taasta_fail_btn.Text = "Taasta fail";
+            this.Taasta_fail_btn.UseVisualStyleBackColor = true;
+            this.Taasta_fail_btn.Click += new System.EventHandler(this.Taasta_fail_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.Taasta_fail_btn);
+            this.Controls.Add(this.Kus_file_btn);
             this.Controls.Add(this.Kassa);
             this.Controls.Add(this.Arve_lbl);
             this.Controls.Add(this.N_Arve_btn);
@@ -320,6 +346,8 @@
         private System.Windows.Forms.Button N_Arve_btn;
         private System.Windows.Forms.Label Arve_lbl;
         private System.Windows.Forms.Button Kassa;
+        private System.Windows.Forms.Button Kus_file_btn;
+        private System.Windows.Forms.Button Taasta_fail_btn;
     }
 }
 
