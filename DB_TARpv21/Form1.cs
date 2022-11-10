@@ -164,6 +164,7 @@ namespace DB_TARpv21
                     {
                     File.Copy(open.FileName, save.FileName);
                     save.RestoreDirectory = true;
+                    
                     Toode_pbox.Image = Image.FromFile(save.FileName);
                     }
             }
@@ -250,6 +251,7 @@ namespace DB_TARpv21
             FileInfo file = new FileInfo(file_name);
             if (file.Exists)//check file exsit or not  
             {
+                Toode_pbox.Image.Dispose();
                 System.IO.File.Move(file_name, prugikast);
                 file.Delete();
                 
