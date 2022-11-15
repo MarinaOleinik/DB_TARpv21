@@ -41,9 +41,7 @@ namespace DB_TARpv21
             connect.Close();
             
         }
-        int kat_Id;
-        string failid;
-        
+        int kat_Id;        
         List<string> fail_list;
         public List<string> Failid_KatId(int kat_Id)
         {
@@ -92,8 +90,8 @@ namespace DB_TARpv21
                     pictureBox.Image = Image.FromFile(@"..\..\Images\"+fail);
                     pictureBox.Width = pictureBox.Height = 100;
                     pictureBox.SizeMode=PictureBoxSizeMode.StretchImage;
-                    pictureBox.Location= new Point(r, c);
-                    r = r + 100+2;
+                    pictureBox.Location= new Point(c, r);
+                    c = c + 100+2;
                     kategooriad.TabPages[i-1].Controls.Add(pictureBox);
 
                 } 
