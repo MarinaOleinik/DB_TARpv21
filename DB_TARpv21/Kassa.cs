@@ -15,17 +15,13 @@ namespace DB_TARpv21
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marina.oleinik\source\repos\DB_TARpv21\DB_TARpv21\AppData\Tooded_DB.mdf;Integrated Security=True");
         //
         SqlCommand cmd;
-        SqlDataAdapter adapter_toode, adapter_kat;
+        SqlDataAdapter adapter_toode, adapter_kat, failinimi_adap;
         TabControl kategooriad;
-        SqlDataAdapter failinimi_adap;
         PictureBox pictureBox;
         public Kassa()
         {
             this.Size = new System.Drawing.Size(600, 300);
             Kategooriad();
-            //Tooded();
-
-
         }
         TableLayoutPanel tlp;
 
@@ -37,13 +33,11 @@ namespace DB_TARpv21
             DataTable dt_toode = new DataTable();
             adapter_toode = new SqlDataAdapter("SELECT * FROM Toodetable", connect);
             adapter_toode.Fill(dt_toode);
-
             tlp = new TableLayoutPanel();
             foreach (DataRow toode in dt_toode.Rows)
             {
                 //PictureBox pbox=new PictureBox.Image.Add.FromFile("../../Images/about.png");
             }
-
             connect.Close();
             
         }
@@ -55,7 +49,6 @@ namespace DB_TARpv21
         {
             fail_list = new List<string>();
             failinimi_adap = new SqlDataAdapter("SELECT Pilt FROM Toodetable WHERE Kategooria_Id=" + kat_Id, connect);
-            //kat_Id_adap.MissingSchemaAction = MissingSchemaAction.Add;
             DataTable failid = new DataTable();
             failinimi_adap.Fill(failid);
             foreach (DataRow fail in failid.Rows)
@@ -94,7 +87,7 @@ namespace DB_TARpv21
                 int c = 0;
                 foreach (var fail in fail_list)
                 {
-                    MessageBox.Show(fail);
+                    //MessageBox.Show(fail);
                     pictureBox = new PictureBox();
                     pictureBox.Image = Image.FromFile(@"..\..\Images\"+fail);
                     pictureBox.Width = pictureBox.Height = 100;
@@ -103,11 +96,7 @@ namespace DB_TARpv21
                     r = r + 100+2;
                     kategooriad.TabPages[i-1].Controls.Add(pictureBox);
 
-                }
-                
-                
-               
-
+                } 
             }
             kategooriad.ImageList = iconsList;//
             connect.Close();

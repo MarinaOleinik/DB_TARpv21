@@ -131,6 +131,7 @@
       <DependentUpon>Tooded_DB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Banana.jpg" />
     <Content Include="Images\Football.png" />
     <Content Include="Images\piim.jpg" />
     <Content Include="Images\about.png" />
