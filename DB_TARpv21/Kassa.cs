@@ -27,23 +27,10 @@ namespace DB_TARpv21
 
 
 
-        public void Tooded(int kat_Id)
-        {
-            connect.Open();
-            DataTable dt_toode = new DataTable();
-            adapter_toode = new SqlDataAdapter("SELECT * FROM Toodetable", connect);
-            adapter_toode.Fill(dt_toode);
-            tlp = new TableLayoutPanel();
-            foreach (DataRow toode in dt_toode.Rows)
-            {
-                //PictureBox pbox=new PictureBox.Image.Add.FromFile("../../Images/about.png");
-            }
-            connect.Close();
-            
-        }
+        
         int kat_Id;        
-        List<string> fail_list;
-        public List<string> Failid_KatId(int kat_Id)
+        List<string> fail_list; 
+        public List<string> Failid_KatId(int kat_Id) //Failide loetelu igas kategoorijas 
         {
             fail_list = new List<string>();
             failinimi_adap = new SqlDataAdapter("SELECT Pilt FROM Toodetable WHERE Kategooria_Id=" + kat_Id, connect);
@@ -51,16 +38,16 @@ namespace DB_TARpv21
             failinimi_adap.Fill(failid);
             foreach (DataRow fail in failid.Rows)
             {
-                fail_list.Add(fail["Pilt"].ToString());
+                fail_list.Add(fail["Pilt"].ToString()); //liisame pildi nimetus listisse
             }
             return fail_list;
         }
         public void Kategooriad()
         {
-            kategooriad = new TabControl();
+            kategooriad = new TabControl(); //loome kaardid
             kategooriad.Name = "Kategooriad";
             kategooriad.Dock = DockStyle.Left;
-            kategooriad.Width = this.Width;
+            kategooriad.Width = this.Width; //kaartide suurus võrdus vormi suurusega
             kategooriad.Height = this.Height;
 
             connect.Open();
@@ -79,20 +66,20 @@ namespace DB_TARpv21
                 iconsList.Images.Add(Image.FromFile(@"..\..\Kat_pildid\" + (string)nimetus["Kategooria_nimetus"] + ".jpg"));//
                 kategooriad.TabPages[i].ImageIndex = i;//
                 i++;//
-                kat_Id = (int)nimetus["Id"];
-                fail_list = Failid_KatId(kat_Id);
+                kat_Id = (int)nimetus["Id"]; //Kategooria Id mis kaart loodakse
+                fail_list = Failid_KatId(kat_Id);//Failide loetelu
                 int r = 0;
                 int c = 0;
                 foreach (var fail in fail_list)
                 {
                     //MessageBox.Show(fail);
-                    pictureBox = new PictureBox();
+                    pictureBox = new PictureBox(); //loob pildi kast
                     pictureBox.Image = Image.FromFile(@"..\..\Images\"+fail);
-                    pictureBox.Width = pictureBox.Height = 100;
+                    pictureBox.Width = pictureBox.Height = 100; //kasti suurus
                     pictureBox.SizeMode=PictureBoxSizeMode.StretchImage;
-                    pictureBox.Location= new Point(c, r);
-                    c = c + 100+2;
-                    kategooriad.TabPages[i-1].Controls.Add(pictureBox);
+                    pictureBox.Location= new Point(c, r); //kasti asukoht
+                    c = c + 100+2; //järgmise kasti positsion(liigume paremale)
+                    kategooriad.TabPages[i-1].Controls.Add(pictureBox); //lisame pilt kaardile
 
                 } 
             }
